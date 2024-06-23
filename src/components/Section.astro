@@ -1,0 +1,41 @@
+---
+const { colorHeader, title, price, description } = Astro.props;
+
+console.log({ colorHeader, title, price, description})
+---
+
+<section
+  class="landing-section text-black h-screen w-screen text-center overflow-hidden relative"
+  data-header-bg={colorHeader}
+>
+  <div class="z-30 relative h-full flex flex-col">
+    <header>
+      <h2 class="text-black pt-24 font-universalSans text-[39px] font-bold">
+        {title}
+      </h2>
+      <h4 class="font-universalSans text-2xl">{price}</h4>
+      <p class="text-gray-700 font-universalSans text-sm font-extralight">
+        {description}
+      </p>
+    </header>
+
+    <footer class="flex flex-col flex-grow justify-end pb-28">
+      <div class="flex justify-center gap-6">
+        <a
+          href="#"
+          class="text-gray-700 bg-white border-[3px] border-transparent text-sm rounded font-medium px-6 py-2 inline-block w-1/5 h-10 backdrop-blur-sm"
+          >Ordenar</a
+        >
+        <a
+          href="#"
+          class="text-white bg-[#171a20] border-[3px] border-transparent text-sm rounded font-medium px-6 py-2 inline-block w-1/5 h-10 hover:bg-[#3c3c44]"
+          >Prueba de manejo</a
+        >
+      </div>
+    </footer>
+  </div>
+
+  <div class="z-10">
+    <slot name="background" />
+  </div>
+</section>

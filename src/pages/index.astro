@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LandingHeader from "../components/LandingHeader.astro";
+import Image from "astro/components/Image.astro";
+import Section from "../components/Section.astro";
+---
+
+<Layout title="Bienvenido a Tesla">
+
+  <LandingHeader />
+
+  <main class="snap-y snap-mandatory relative w-full h-screen overflow-x-hidden scroll-smooth">
+    <!-- MODEL 3 -->
+    <div class="snap-center">
+      <Section colorHeader="transparent" title="Model 3" price="Desde $676,500¹" description="Después de ahorros en combustible">
+        <Image
+          slot="background"
+          class="absolute top-0 bottom-0 left-0 w-full h-full object-cover"
+          src="/imgs/model-3.avif"
+          alt="Model 3"
+          width={500}
+          height={500}
+        />
+      </Section>
+    </div>
+
+    <!-- MODEL Y -->
+    <div class="snap-center">
+      <Section colorHeader="white" title="Model Y" price="Desde $679,000²" description="Después de ahorros en combustible">
+        <Image
+          slot="background"
+          class="absolute top-0 bottom-0 left-0 w-full h-full object-cover"
+          src="/imgs/model-y.avif"
+          alt="Model 3"
+          width={500}
+          height={500}
+        />
+      </Section>
+    </div>
+  </main>
+
+</Layout>
